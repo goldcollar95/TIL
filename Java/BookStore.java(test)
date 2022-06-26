@@ -1,0 +1,105 @@
+class Book{
+	private String title;
+	private int price;
+	
+	
+	public Book() {
+		
+	}
+	
+	public Book(String title, int price) {
+		this.title = title;
+		this.price = price;
+	}
+	//get set 생성자
+	public String getTitle() {
+		return title;
+	}
+	public void setTitle(String title) {
+		this.title = title;
+	}
+	public int getPrice() {			//get -> private 조회용도	
+		return price;
+	}
+	public void setPrice(int price) {
+		this.price = price;
+	}
+	
+
+}
+//BookMgr 클래스
+class BookMgr{
+	static String booklist;
+	
+	public BookMgr(Book[] booklist2) {
+			
+	}
+	
+	/*void printBookList() {		
+		
+	}*/
+
+	public void printTotalPrice() {
+		
+	}
+
+	public int printTotalPrice(int i, int j, int k, int l, int m) {
+		
+		return i+j+k+l+m;
+	}
+}
+
+
+
+public class BookStore {
+
+	public static void main(String[] args) {
+									
+		Book booklist[] = new Book[5];
+		
+		
+		Book book1 = new Book("Java Program",25000);
+		
+		Book book2 = new Book("JSP Program", 15000);
+		
+		Book book3 = new Book("SQL Fundamentals", 30000);
+		
+		Book book4 = new Book("JDBC Program", 28000);
+		
+		Book book5 = new Book("EJB Program", 34000);
+		
+		book5.setTitle("EJB Program");
+		book5.setPrice(34000);
+		booklist[0] = book1;
+		booklist[1] = book2;
+		booklist[2] = book3;
+		booklist[3] = book4;
+		booklist[4] = book5;
+		
+		
+		
+		System.out.println("=== 책 목록 ===");
+		book1.setTitle("Java Program");
+		System.out.println(book1.getTitle());
+		book2.setTitle("JSP Program");
+		System.out.println(book2.getTitle());
+		book3.setTitle("SQL Fundamentals");
+		System.out.println(book3.getTitle());
+		book4.setTitle("JDBC Program");
+		System.out.println(book4.getTitle());
+		book5.setTitle("EJB program");
+		System.out.println(book5.getTitle());
+		
+		
+		//System.out.println();
+		BookMgr mgr = new BookMgr(booklist);
+		//mgr.printBookList(); 	
+		System.out.println("=== 책 가격의 총합 ===");
+		mgr.printTotalPrice();
+		int result1 = mgr.printTotalPrice(25000, 15000, 30000, 28000, 34000);
+		System.out.println(result1); //책 가격의 총합이 나와야함.
+		
+		
+	}
+
+}
