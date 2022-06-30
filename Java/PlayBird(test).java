@@ -1,3 +1,4 @@
+**본인코드**
 class Bird { 			//두 클래스 공통 특성 변수 + 메서드
 	String name = "꽥꽥이";
 	String name1 = "쨱짹";
