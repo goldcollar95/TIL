@@ -1,7 +1,7 @@
-In a MS, Google or Amazon interview, it`s not terribly common to be asked to implement an algo-rithm with threads (unless you`re working in a team for which this is a particularly important skill).
+In a MS, Google or Amazon interview, it's not terribly common to be asked to implement an algo-rithm with threads (unless you`re working in a team for which this is a particularly important skill).
 it is however, relatively common for interviewers at any company to assess your general understanding of threads, particularly your understanding of deadlocks.
 
-***Threads in Java
+## Threads in Java
 
 Every thread in Java is created and controlled by a unique object of the java.lang.Thread class.When a standalone application is run, a user thread is automatically created to execute the main () method.
 This thread is called the main thread.
@@ -17,11 +17,12 @@ Implementing the Runnable Interface
 
 The Runnable interface has the follwing very simple structure.
 
-```
+```java
   public interface Runnable {
     void run();
     }
  ```   
+ 
  To create and use a thread using this interface, we do the following:
  
  1.Create a class which implements the Runnable interface. An object of this class is a Runnable object.
@@ -30,7 +31,7 @@ The Runnable interface has the follwing very simple structure.
  
  For example:
  
- ```
+ ```java
   public class RunnableThreadExample implements Runnable{
   
     public int count = 0;
