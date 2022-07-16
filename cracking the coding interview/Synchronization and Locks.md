@@ -4,7 +4,7 @@ access to shared resources.
 
 They keyword synchroized and the lock form the basis for implementing synchronized execution of code.
 
-Synchronized Methods
+**Synchronized Methods
 
 Most commonly, we restric access to shared resources through the use of the synchronized keyword. it can be applied to methods and code blocks, and restricts
 multiple threads from executing the code simul-taneously on the same object.
@@ -66,6 +66,8 @@ thread2.start();
 thread1.start();
 thread2.start();
 
+```
+
 Static methods synchronize on the class lock. The two threads above could not simultaneously execute synchronized static methods on the same class,
 even if one is calling foo and the other is calling bar. 
 
@@ -114,7 +116,7 @@ Similarly, a block of code can be synchronized. THis operates very simliarly to 
 Like synchronizing a method, only one thread per instance of MyObject can execute the code wuithin the synchronized block.
 That means that, if thread 1 and thread 2 have the same instance of MyObject, only one will be allowed to execute the code block at a time.
 
-** Locks
+**Locks
 For more granlar control, we can utilize a lock. A lock(or monitor)is used to synchronize access to a shared resource by associating the resource with the lock.
 A thread gets access to a shared resource by first  acquiring the lock associated with the resource. At any given time, at most one thread can hold the lock
 and, therefore,only one thread can access the shared resource.
