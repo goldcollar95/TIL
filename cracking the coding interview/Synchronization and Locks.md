@@ -12,7 +12,7 @@ multiple threads from executing the code simul-taneously on the same object.
 To clarify the last point, consider the following code:
 
 
-```
+```java
 public class MyClass extends Thread {
   private String name;
   pirvate MyObject  myObj;
@@ -42,10 +42,14 @@ public class MyObject{
  ("=====================================================")
  
 ```
+
+
 Can two instance of MyClass call foo at the same time? It depends. if they have the same instance of MyObject, then no. But, if they hold different
 references, then answer is yes.
 
-```
+
+
+```java
 /*Difference references - both threads can call MyObject.foo()*/
 MyObject obj1 = new MyObject();
 MyObject obj2 = new MyObject();
@@ -65,7 +69,7 @@ thread2.start();
 Static methods synchronize on the class lock. The two threads above could not simultaneously execute synchronized static methods on the same class,
 even if one is calling foo and the other is calling bar. 
 
-```
+```java
 public void run()
     if(name.equals("1")) MyObject.foo(name);
     else if (name.equals("2")) MyObject.bar(name);
@@ -80,7 +84,9 @@ public class MyObject {
 ```
 
 if you run this code, you will see the follwing printed:
-```
+
+
+```java
 Thread 1.foo(): starting
 Thread 1.foo(): ending
 Thread 2.bar(): starting
@@ -88,7 +94,9 @@ Thread 2.bar(): ending
 
 Synchronized Blocks
 Similarly, a block of code can be synchronized. THis operates very simliarly to synchronizing a method.
-``` 
+
+
+```java
   public class MyClass exnteds Thread {
     public void run() { 
       myObj.foo(name);
@@ -101,6 +109,8 @@ Similarly, a block of code can be synchronized. THis operates very simliarly to 
   }
 } 
 
+```
+
 Like synchronizing a method, only one thread per instance of MyObject can execute the code wuithin the synchronized block.
 That means that, if thread 1 and thread 2 have the same instance of MyObject, only one will be allowed to execute the code block at a time.
 
@@ -112,7 +122,7 @@ and, therefore,only one thread can access the shared resource.
 A common use case for locks is when a resource is accessed from multiple places, but should be only accessed by one thread at a time. This case is demonstrated in the code below.
 
 
-```
+```java
 public class LockedATM{
   private Lock lock;
   private int balance = 100; 
