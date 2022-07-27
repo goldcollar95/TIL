@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+alert('처음부터 보입니다.');
+function display(){
+	alert('클릭하셨습니다');
+}
+</script>
+</head>
+<body>
+
+<form action="a.jsp">
+	<input type=text name="id">
+	<input type=submit value="submit버튼"><!--  이벤트 처리기 등록 내장 기능 버튼 -->
+	<input type=reset value="reset버튼"><!--  이벤트 처리기 등록 내장 기능 버튼 -->
+	<input type=button value="그냥버튼" onclick="display()">
+</form>
+
+
+<hr>
+
+<input id="test2" type = button value = "그냥버튼2">
+
+<script>
+document.getElementById("test2").onclick = function(){alert('그냥버튼2 클릭하셨습니다'); }
+</script>
+
+
+
+
+
+</body>
+</html>
