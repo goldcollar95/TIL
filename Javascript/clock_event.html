@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<input id="clock" type=button value="시계" onclick='displayclock()' >
+<input id="stop" type=button value="중단" onclick='stopclock()'>
+<div id="here"></div>
+<!-- <input type=button value="중단"> -->
+<script>
+/* document.getElementById("clock").onclick=function(); */
+
+function displayclock(){
+	setInterval(function(){
+		var now = new Date();
+		document.write("<h3 style='color:blue'>" + now.toLocaleString() + "</h3>");	
+		
+		
+	},1000);
+	
+}
+
+function stopclock(){
+	
+	
+
+}
+
+</script>
+</body>
+
+</html>
