@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<script>
+		function f1() {
+			document.write("<h3>f1호출</h3>");
+		}
+		function f2() {
+			var a = 10;
+			b = 20;
+			return a + b;
+		}
+		function f3(a, b) {
+			return a + b;
+
+		}
+		function f4(a, b) {
+			if (!isNaN(a) && !isNaN(b)) {
+				return a * b;
+			} else {
+				return a + b;
+			}
+		}
+		f1();
+		var result2 = f2();
+		document.write("<h3>" + result2 + "</h3>");
+
+		document.write("<h3>" + f3(10, 20) + "</h3>");
+		document.write("<h3>" + f3("십", "이십") + "</h3>"); //문자열결합 ok
+
+		document.write("<h3> f4의 타입 = " + typeof (f4) + "</h3>");	//function
+		document.write("<h3> f4의 타입 = " + typeof (f4("십", "이십")) + "</h3>");	//str
+		document.write("<h3> f4의 타입 = " + typeof (f4(10, 20)) + "</h3>");	//num
+		
+		document.write("<h3> f4의 타입 = " + f4 + "</h3>");	 //func 
+		
+		//함수 - 유명의 함수 / 익명 함수
+		(function(){
+			document.write("<h3> 무명함수.</h3>"); 
+		}) ();
+		//함수도 변수의 일종이다
+		var myfunc = function(){
+			document.write("<h3> 변수처럼 사용하는 함수입니다.</h3>");
+		}
+		myfunc();
+	</script>
+
+</body>
+</html>
