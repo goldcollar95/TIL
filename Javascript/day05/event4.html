@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<!-- input 태그
+id속성 -- css style 처리, 현재 id 속성 태그 위치, dom처리 #id값
+name속성 -- form action 파일 전송할때 변수명  dom-->
+<script>
+window.addEventListener('load', function() {
+		var count = 0;
+	document.querySelector("#phone").addEventListener('keydown', 
+			function(e){
+			//1. 숫자판단
+			/* if(e.keyCode >= 48 && e.keyCode <= 57){
+			document.querySelector("#output").innerHTML = e.key + "=적합" ;
+			document.querySelector("#output").style.color = "green";
+			}//if
+			else{
+				document.querySelector("#output").innerHTML = e.key + "=부적합" ;
+				document.querySelector("#output").style.color = "red" ;
+			}//else */
+			
+			//------------------------------------------------------------------------------
+			//2. 11개 구성. 010 시작
+			/* count++;
+			if(count == 11 && document.querySelector("#phone").value.indexOf("010") == 0 ){
+				document.querySelector("#output").innerHTML = document.querySelector("#phone").value;
+				document.querySelector("#output").style.color = "green";
+			}
+			else{
+				document.querySelector("#output").innerHTML = "올바른 형식이 아닙니다.";
+				document.querySelector("#output").style.color = "red";
+			} */
+			//3.java + java script + html
+			var regex = /^010[0-9]{3,4}[0-9]{4}$/;
+			/* var phone = this.value; e라는 객체를 쓰지않을때 선언하는 코드 */
+			var phone = "01022223333ㅁ";
+			if(phone.match(regext) != null){
+			alert(phone.match(regex));
+			}
+		},//function
+			false);
+}, false);
+</script>
+
+<form action="a.jsp">
+<!-- 폰번호입력 : <input type = text id="phone" name="phone" pattern="010[0-9]{3,4}[0-9]{4}"> -->
+<input type = "text" id="phone" name="phone">
+<input type=submit value="전송">
+<div id="output">여기에서 입력내용을 확인할 수 있습니다.</div>
+</form>
+</body>
+</html>
