@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<!-- 1. 입력양식제공 2.다른서버파일전송 -->
+<form action = "a.jsp">
+
+<input type =checkbox name = "hobby" value="music"> 음악감상<br>
+<input type =checkbox name = "hobby" value="movie"> 영화<br>
+<input type =checkbox name = "hobby" value="cook"> 요리<br>
+<input type =checkbox name = "hobby" value="study"> 공부<br>
+
+<input type = radio name = "time" value= "12"> 12시<br>
+<input type = radio name = "time" value= "15"> 3시<br>
+<input type = radio name = "time" value= "16"> 4시<br>
+<input type = radio name = "time" value= "18"> 6시<br>
+
+<input type = submit value = "전송">
+</form>
+
+<script>
+/* var hobby_array = document.getElementsByName("hobby");
+for(var i = 0; i < hobby_array.length; i++){
+	document.write(hobby_array[i].value);
+}
+
+//input type submit value 출력
+var submit = document.querySelector("input[type=submit]");
+document.write(submit.value); */
+
+//input checkbox 마지막 value 출력
+/* var checkbox = document.querySelector("input[type=checkbox]:nth-child(7)");
+document.write(checkbox.value); */
+
+
+//query select all
+var checkbox_array = document.querySelectorAll("input[type=checkbox]");
+for(var i = 0; i < checkbox_array.length; i++){
+document.write(checkbox_array[i].value + "<br>");
+}
+
+
+checkbox_array[0].value = "음악감상";
+document.write(checkbox_array[0].value + "<br>");
+if(checkbox_array[0].hasAttribute("value")){
+	checkbox_array[0].removeAttribute("value");
+}
+document.write(checkbox_array[0].hasAttribute("value") + "<br>");
+</script>
+
+
+<h1> 제목 </h1>
+<div> div태그</div>
+<img src="a.jpg">
+<input type = text>
+
+<script>
+/* document.querySelector("H1").innerHTML = "변경제목";
+document.querySelector("DIV").innerHTML = "<h3>div태그수정</h3>"; */
+
+/* document.querySelector("H1").textContent = "변경제목";
+document.querySelector("DIV").textContent = "<h3>div태그수정</h3>"; */
+
+//태그 생성
+var h3 = document.createElement("h3"); 	//<h3></h3>
+var h3_text = document.createTextNode("div태그수정");
+h3.appendChild(h3_text); //<h3>div태그수정</h3>
+document.querySelector("DIV").appendChild(h3); //<div><h3>div태그수정</h3></div>
+
+//appendChild는 이미 존재하는 태그 대상으로 하면 이동 효과
+document.querySelector("body").appendChild(document.querySelector("H1"));
+
+// 노드 치환 
+document.querySelector("body").replaceChild(document.querySelector("H1"),
+		document.querySelector("img"));
+
+//document.querySelector("body").removeChild(document.querySelector("img"));
+
+
+//html 최초 실행 css 없다가 자바스크립트 css 설정 변경
+//document.querySelector("H1").style="color:red; background-color:pink; width:500px; height=100px;
+var h1= document.querySelector("H1");
+h1.style.color = "red";
+h1.style.width = 500;
+h1.style.backgroundColor="pink";
+h1.style.borderColor="green";
+h1.style.borderWidth="2px";
+h1.style.borderStyle="solid";
+</script>
+</body>
+</html>
