@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -5,31 +6,33 @@
 <title>Insert title here</title>
 </head>
 <body>
-<form id= "Loginform" action = "server.jsp">	<!-- sumit type이 동작하기 위해서 action을 선언해줘야한다. -->
-아이디<Input type = text id ="id" name="id" required><br>
-암호1<input type = password id = "pw1" name = "pw" ><br>
-암호2<input type = password id = "pw2" name = "pw" ><br>
+<form id="loginform"  action="server.jsp">
+ 아이디 <input type=text id="id"  name="id" required ><br>
+ 암호1 <input type=password id="pw1" name="pw" ><br>
+ 암호2 <input type=password id="pw2" name="pw" ><br>
 <input type=submit value="로그인">
 </form>
 <script>
-document.querySelector("#loginform").addEventListener('submit',
-		function(e){
-		/* if(document.querySelector("#id").value == ''){
+document.querySelector("#loginform").addEventListener('submit', 
+		function(e){ 
+		/*if(document.querySelector("#id").value == ''){
 			alert("아이디 필수 입력");
 			e.preventDefault();
-		}  */
+		}*/
 		if(document.querySelector("#pw1").value == document.querySelector("#pw2").value){
 			alert("submit 가능");
-		}	//if
+		}//if 
 		else{
 			alert("submit 불가능");
-			e.target.action = "";
-			//e.preventDefault();
+			e.preventDefault();
+			//this.action="";
+			
 		}
-		},	//function end
+		}, //function end
 		false);
 // true -> 부모 이벤트를 자식으로 전파
 // false -> 자식 이벤트를 부모로 전파
+
 </script>
 </body>
 </html>
