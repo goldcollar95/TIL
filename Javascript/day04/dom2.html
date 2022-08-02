@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<!-- 1. 입력양식제공 2.다른서버파일전송 -->
+<form action = "a.jsp">
+
+<input type =checkbox name = "hobby" value="music"> 음악감상<br>
+<input type =checkbox name = "hobby" value="movie"> 영화<br>
+<input type =checkbox name = "hobby" value="cook"> 요리<br>
+<input type =checkbox name = "hobby" value="study"> 공부<br>
+
+<input type = radio name = "time" value= "12"> 12시<br>
+<input type = radio name = "time" value= "15"> 3시<br>
+<input type = radio name = "time" value= "16"> 4시<br>
+<input type = radio name = "time" value= "18"> 6시<br>
+
+<input type = submit value = "전송">
+</form>
+
+<script>
+/* var hobby_array = document.getElementsByName("hobby");
+for(var i = 0; i < hobby_array.length; i++){
+	document.write(hobby_array[i].value);
+}
+
+//input type submit value 출력
+var submit = document.querySelector("input[type=submit]");
+document.write(submit.value); */
+
+//input checkbox 마지막 value 출력
+/* var checkbox = document.querySelector("input[type=checkbox]:nth-child(7)");
+document.write(checkbox.value); */
+
+
+//query select all
+var checkbox_array = document.querySelectorAll("input[type=checkbox]");
+for(var i = 0; i < checkbox_array.length; i++){
+document.write(checkbox_array[i].value + "<br>");
+}
+	
+</script>
+</body>
+</html>
