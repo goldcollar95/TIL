@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+h1 {width : 500px; height:200px; border:2px solid aqua;
+}
+a {width : 200px; height:100px; border:2px solid navy;
+}
+</style>
+</head>
+<body>
+<h1 id = "outer">
+	<a id="inner" href="test.html">이동</a>
+</h1>
+
+<script>
+document.querySelector("a").onclick =
+	function(e){
+	alert("1. a태그로 이벤트 발생");			// 자식 태그 이벤트 처리 먼저 - 이벤트 부모 태그로 전달
+	e.preventDefault();	//기본동작을 하지마라.
+	e.stopPropagation(); //자식이 부모를 x
+	//부모 이벤트 전달하고 싶지 않다
+};	//+ 3. 기본동작 - 링크 이동 취소
+
+document.querySelector("h1").onclick =
+	function(){
+	alert("2. h1태그로 이벤트 전파");	
+};
+
+</script>
+</body>
+</html>
+
+<!-- 
+a태그 - href 파일링크
+input type = submit - form action 파일 이동
+input type = reset - 입력 내용 삭제하고 action 이동 취소
+ -->
