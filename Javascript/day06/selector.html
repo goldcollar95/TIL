@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="js/jquery-3.6.0.min.js"></script>
+<script>
+$(document).ready(function(){
+	//css selector 복습
+	//document.getElementById("a"); 
+	//document.querySelector("#a").style.backgroundColor = "red";
+	//$("#second").css("clolor", "red");
+	//$("h1").css("color", "red");	//태그관계
+	//$(".red").css("color", "red");	//클래스관계
+	//document.querySelector("h1")[1].style.color="red";	*dom
+	//$("h1#second").css("color", "red");
+	//input 태그 text 타입
+	/* $("input:text").css("color", "red");
+	$("input:button").css("color", "red"); */
+	//$('input[type=button]').css("color", "red");
+	// "태그범위:조건해당 filtering"
+	/* $('input[type^=te]').css("color", "red"); 	//^=te te라는 문자로 시작
+	$('input[type$=l]').css("color", "pink"); 	//$=l l 이라는 문자로 종료
+	$('input[type*=e]').css("color", "green"); // *=e e라는 문자포함 */
+	
+	//$('input:checked') <input type = radio/checkbox checked = "checked"
+	
+	//$('th').css("color","red");
+	//$('th:first').css("color", "red");	//jquery
+	//$('th:first-child').css("color", "red"); //css + jquery . th태그의 부모태그로 거슬러 올라가서 첫번째태그이고 th여야 한다.
+	
+	//$('th:last').css("color", "red");
+	//$('tr:even td').css("color", "red");
+	//$('tr:odd td').css("color", "blue");
+	
+	//$("tr:nth-child(3n) td").css("color", "red");
+	$("tr:eq(3) td").css("color", "red");	//setter 용도
+	$("tr:gt(3) td").css("color", "blue");	//gt는 3보다 큰거 
+	$("tr:lt(3) td").css("color", "green");
+	
+	alert($("tr:eq(3) td").css("color"));	// rgb모드로 보여주는 하나의 방법임.
+	//$("input:checked")//radio, checkbox 대상
+	//$("select option[selected = selected]")
+	
+});
+</script>
+</head>
+<body>
+<h1 class="red"> 제목1 </h1>
+<h1 id="second"> 제목2</h1>
+<h1> <a href="a.html"> 링크1 </a></h1> <!--  a태그 기본 이벤트핸들러 내장(자동이동+글씨 파랑색 밑줄+배경색지정x)  -->
+<a class="red" href="b.html"> 링크2 </a><br>
+<input type=text value="기본문자열"><br>
+<input type=password value="기본암호"><br>
+<input type=tel value="기본"><br>
+<input type=url value="http://"><br>
+<input type=email value="a@b.com"><br>
+<input type=button value="버튼"><br>
+<button>버튼2</button>
+<table>
+<tr><th>번호</th><th>제목</th><th>내용</th><th>작성자</th></tr>
+<tr><td>1</td><td>제목1</td><td>내용1</td><td>작성자1</td></tr>
+<tr><td>2</td><td>제목1</td><td>내용1</td><td>작성자1</td></tr>
+<tr><td>3</td><td>제목1</td><td>내용1</td><td>작성자1</td></tr>
+<tr><td>4</td><td>제목1</td><td>내용1</td><td>작성자1</td></tr>
+<tr><td>5</td><td>제목1</td><td>내용1</td><td>작성자1</td></tr>
+<tr><td>6</td><td>제목1</td><td>내용1</td><td>작성자1</td></tr>
+<tr><td>7</td><td>제목1</td><td>내용1</td><td>작성자1</td></tr>
+</table>
+</body>
+</html>
