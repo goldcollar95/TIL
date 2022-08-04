@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="js/jquery-3.6.0.min.js"></script>
+<script>
+$(document).ready(function(){
+	$("img:first").attr("src", "/http://localhost:8080/html/images/cau1.jpeg");	//setter1
+	$('img').attr("width", "100");
+	$('img').attr("height", "100");
+	$('img:first').attr("alt", "쥬스 사진입니다.");
+	
+	$('img:last').attr(		//setter2
+			{
+		src: "/html/images/americano.jpg",
+		alt: "커피 사진입니다.",
+		width : "200",
+		height : "200"
+		});
+	
+	//getter
+	//1번째 이미지 출력 이미지 url
+	//alert($('img:first').attr("src"));	
+	//alert($('img').attr("src")); //getter 용도 . 선택자 여러개 태그 선택시 첫번째 태그
+	//$('img:last').attr("src", $('img:first').attr("src"));
+	
+	//방법 1(자바스크립의 반복문위주 )
+	/* for(var i = 0; i < $('img').length; i++){
+	alert($('img:eq('+i+')').attr("src"));
+		
+	} */
+	 //방법2(jquery 반복문 내장하는 함수를 써보겠다)
+	 
+	 $('img').each(function(index) {
+	 	//alert($('img:eq('+index+')').attr("src"));
+	 	alert(index + " 번째 이미지의 src= " + $(this)("src"));
+	 })
+	 
+	 //img:first src속성 제거
+	 $("img").removeAttr("src");
+});	//ready end
+</script>
+</head>
+<body>
+<img >
+<img>
+</body>
+</html>
