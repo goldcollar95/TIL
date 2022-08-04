@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="js/jquery-3.6.0.min.js"></script>
+<script>
+$(document).ready(function(){
+	$("h1#first").css("width", "300px");
+	$("h1#first").css("border", "5px solid green");
+	
+	 $("h1#first").click(function(){
+		$("div#last").append("click메소드 ===> "+ $("h1#first").text()); 
+	});
+		
+	 $("h1#first").on('click', function(){
+		 $("h1#first").css("width", "500px");
+		 $("h1#first").css("border", "5px solid blue");
+		 $("div#last").append("on메소드 ===> "+ $("h1#first").text()); 
+		
+		
+	});	//on end
+	
+	$("input:button").on('click', function(){
+		$("h1#first").off('click');
+	});
+	
+	function test1(){
+		$("div#last").append("click메소드===> "+$("h1#first").text());
+	}
+});	
+</script>
+</head>
+<body>
+<!-- 모든 html 태그 클릭 가능 - 동작 사용자 구현(내장 구현 - a, input type = submit, type = reset  -->
+<h1 id = "first">클릭해 보세요</h1>
+<input type = button value = "이벤트멈춥니다">
+<div id="Last"></div>
+</body>
+</html>
