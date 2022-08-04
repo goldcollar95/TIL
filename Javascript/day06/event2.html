@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="js/jquery-3.6.0.min.js"></script>
+<script>
+	$(document).ready(function() {
+		//mouseenter	/ mouseleave	/ click
+		$("div#book").css({
+			height : "100px",
+			width : '100px',
+			backgroundColor : "orange"
+
+		});
+
+		/* $("div#box").on('click', function() {
+			$(this).css("background-color", "red");
+		});
+
+		$("div#box").on('mouseenter', function() {
+			$(this).css("background-color", "green");
+		});
+
+		$("div#box").on('mouseleave', function() {
+			$(this).css("background-color", "blue");
+		}); */
+
+	$("a").on('click', function(ev){
+		ev.preventDefault();
+		$("div#box").html("클릭해도 아무 소용없습니다.")
+	})	
+		
+	});
+</script>
+</head>
+<body>
+<div id="box"></div>
+<a href="a.html"> a.html링크</a><!-- 파랑색 밑줄/클릭하면 이동 -->
+</body>
+</html>
