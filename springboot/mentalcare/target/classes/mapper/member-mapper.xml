@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+
+
+<mapper namespace="member" >
+	
+	<select id="login" resultType="String">
+		select id, password from member where id = #{id} and password =#{password}
+	</select>
+	
+	<insert id="insertmember" parameterType="checkba.member.MemberDTO" >
+	 	insert into member values(#{id},#{password},#{nickname},#{email},now()) 
+	</insert>
+	
+	<update id="updatemember" parameterType="checkba.member.MemberDTO" >
+		update member set nickname=#{nickname},email=#{email} where id=#{id}
+	</update>
+
+	<delete id="deletemember" parameterType="String">
+		delete from member where id=#{i}
+	</delete>
+	
+	<select id="memberlist" resultType="checkba.member.MemberDTO" >
+		select * from member  
+	</select>
+
+	<select id="membercount" resultType="int">
+		select count(*) from member   
+	</select>
+
+	<select id="onemember" resultType="checkba.member.MemberDTO" parameterType="String" >
+	    select * from member where id=#{a}
+	</select>
+
+
+</mapper>
+

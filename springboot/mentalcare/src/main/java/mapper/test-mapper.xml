@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+  
+  
+  <mapper namespace="test" >
+  
+  	<select id="stressresult" resultType="testdto" parameterType="testdto">
+		select test set result=#{result},result_title=#{result_title},result_contents=#{result_contents},
+		healing_title=#{healing_title},healing_contents=#{healing_contents}
+	</select>
+	
+	
+ </mapper>
